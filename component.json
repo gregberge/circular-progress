@@ -1,0 +1,6 @@
+{
+  "name": "circular-progress",
+  "description": "A JavaScript circular progress bar widget, dependency-free and configurable.",
+  "version": "0.1.0",
+  "main": "circular-progress.js"
+}
