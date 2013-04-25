@@ -12,7 +12,7 @@ var progress = new CircularProgress({
   lineWidth: 4
 });
 
-document.body.appendChild(progress.canvas);
+document.body.appendChild(progress.el);
 
 progress.update(40);
 ```
