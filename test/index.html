@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circular Progress test</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script src="../circular-progress.js"></script>
+    <script>
+    (function () {
+      var n, id, progress;
+
+      progress = new CircularProgress({
+        radius: 20
+      });
+
+      document.body.appendChild(progress.el);
+
+      n = 0;
+      id = setInterval(function () {
+        if (n == 100) clearInterval(id);
+        progress.update(n++);
+      }, 100);
+    })();
+
+    (function () {
+      var n, id, progress;
+
+      progress = new CircularProgress({
+        radius: 40,
+        lineWidth: 2,
+        strokeStyle: 'black',
+        initial: {
+          lineWidth: 4,
+          strokeStyle: 'gray'
+        }
+      });
+
+      document.body.appendChild(progress.el);
+
+      n = 0;
+      id = setInterval(function () {
+        if (n == 100) clearInterval(id);
+        progress.update(n++);
+      }, 70);
+    })();
+
+    (function () {
+      var n, id, progress;
+
+      progress = new CircularProgress({
+        radius: 70,
+        strokeStyle: 'black',
+        lineCap: 'square',
+        lineJoin: 'round',
+        lineWidth: 5,
+        shadowBlur: 0,
+        shadowColor: 'yellow',
+        text: {
+          font: 'bold 15px arial',
+          shadowBlur: 0
+        },
+        initial: {
+          strokeStyle: 'white',
+          lineCap: 'square',
+          lineJoin: 'round',
+          lineWidth: 5,
+          shadowBlur: 10,
+          shadowColor: 'black'
+        }
+      });
+
+      document.body.appendChild(progress.el);
+
+      n = 0;
+      id = setInterval(function () {
+        if (n == 100) clearInterval(id);
+        progress.update(n++);
+      }, 30);
+    })();
+
+    </script>
+  </body>
+</html>
