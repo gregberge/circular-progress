@@ -6,7 +6,6 @@
   "main": "circular-progress.js",
   "ignore": [
     ".gitignore",
-    ".jshintrc",
     "Gruntfile.js",
     "package.json",
     "test"
