@@ -1,0 +1,14 @@
+{
+  "name": "circular-progress",
+  "description": "A JavaScript circular progress widget, dependency-free and configurable.",
+  "author": "Bergé Greg <berge.greg@gmail.com>",
+  "version": "0.2.1",
+  "main": "circular-progress.js",
+  "ignore": [
+    ".gitignore",
+    ".jshintrc",
+    "Gruntfile.js",
+    "package.json",
+    "test"
+  ],
+}

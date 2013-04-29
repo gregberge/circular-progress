@@ -1,13 +1,15 @@
-(function () {
-  var autoscale, extendCtx, ctxProperties, CircularProgress;
+/*! circular-progress - v0.2.1 - https://github.com/neoziro/circular-progress */
 
-  ctxProperties = ['fillStyle', 'font', 'globalAlpha', 'globalCompositeOperation',
+(function () {
+
+  // List of 2D context properties
+  var ctxProperties = ['fillStyle', 'font', 'globalAlpha', 'globalCompositeOperation',
         'lineCap', 'lineDashOffset', 'lineJoin', 'lineWidth',
         'miterLimit', 'shadowBlur', 'shadowColor', 'shadowOffsetX',
         'shadowOffsetY', 'strokeStyle', 'textAlign', 'textBaseLine'];
 
-  // autoscale function from https://github.com/component/autoscale-canvas
-  autoscale = function (canvas) {
+  // Autoscale function from https://github.com/component/autoscale-canvas
+  var autoscale = function (canvas) {
     var ctx = canvas.getContext('2d'),
     ratio = window.devicePixelRatio || 1;
 
@@ -22,7 +24,8 @@
     return canvas;
   };
 
-  extendCtx = function (ctx, options) {
+  // Utility function to extend a 2D context with some options
+  var extendCtx = function (ctx, options) {
     for (var i in options) {
       if (ctxProperties.indexOf(i) === -1) continue;
 
@@ -30,7 +33,8 @@
     }
   };
 
-  CircularProgress = this.CircularProgress = function (options) {
+  // Main CircularProgress object exposes on global context
+  var CircularProgress = this.CircularProgress = function (options) {
     var ctx, i, property;
 
     options = options || {};
@@ -51,12 +55,14 @@
     if (options.radius) this.radius(options.radius);
   };
 
+  // Update with a new `percent` value and redraw the canvas
   CircularProgress.prototype.update = function (value) {
     this._percent = value;
     this.draw();
     return this;
   };
 
+  // Specify a new `radius` for the circle
   CircularProgress.prototype.radius = function (value) {
     var size = value * 2;
     this.el.width = size;
@@ -65,6 +71,7 @@
     return this;
   };
 
+  // Draw the canvas
   CircularProgress.prototype.draw = function () {
     var tw, text, fontSize,
         options = this.options,
@@ -79,7 +86,7 @@
 
     ctx.clearRect(0, 0, size, size);
 
-    // initial circle
+    // Initial circle
     if (options.initial) {
       extendCtx(ctx, options);
       extendCtx(ctx, options.initial);
@@ -89,14 +96,14 @@
       ctx.stroke();
     }
 
-    // progress circle
+    // Progress circle
     extendCtx(ctx, options);
 
     ctx.beginPath();
     ctx.arc(x, y, half - ctx.lineWidth, 0, angle, false);
     ctx.stroke();
 
-    // text
+    // Text
     if (options.text) {
       extendCtx(ctx, options);
       extendCtx(ctx, options.text);
