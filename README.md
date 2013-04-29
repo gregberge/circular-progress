@@ -2,6 +2,8 @@
 
 A JavaScript circular progress widget, dependency-free and configurable.
 
+<img src="http://f.cl.ly/items/2l072A342Z2T3P3X2r2d/Screen%20Shot%202013-04-29%20at%206.50.21%20PM.png" width="278" alt="Example">
+
 ## Example
 
 ```javascript
