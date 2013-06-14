@@ -51,3 +51,7 @@ progress.options.text = {
 ### update( value )
 
 Update percent and draw the canvas, `value` must be a float between 0 and 100.
+
+## License
+
+MIT
