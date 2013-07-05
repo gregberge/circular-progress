@@ -2,7 +2,7 @@
   "name": "circular-progress",
   "description": "A JavaScript circular progress widget, dependency-free and configurable.",
   "author": "Bergé Greg <berge.greg@gmail.com>",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.0"
