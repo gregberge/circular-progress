@@ -109,7 +109,7 @@
       extendCtx(ctx, options.text);
     }
 
-    text = options.text.value === null ? (percent | 0) + '%' : '';
+    text = options.text.value === null ? (percent | 0) + '%' : options.text.value;
     tw = ctx.measureText(text).width;
     fontSize = ctx.font.match(/(\d+)px/);
     fontSize = fontSize ? fontSize[1] : 0;
