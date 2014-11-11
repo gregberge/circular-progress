@@ -65,8 +65,8 @@
   // Specify a new `radius` for the circle
   CircularProgress.prototype.radius = function (value) {
     var size = value * 2;
-    this.el.width = size;
-    this.el.height = size;
+    this.el.width = size + this.options.shadowBlur + Math.abs(this.options.shadowOffsetX);
+    this.el.height = size + this.options.shadowBlur + Math.abs(this.options.shadowOffsetY);
     autoscale(this.el);
     return this;
   };
@@ -79,12 +79,14 @@
         percent = Math.min(this._percent, 100),
         ratio = window.devicePixelRatio || 1,
         angle = Math.PI * 2 * percent / 100,
-        size = this.el.width / ratio,
-        half = size / 2,
-        x = half,
-        y = half;
+        width = this.el.width / ratio,
+        height = this.el.height / ratio,
+        x = width / 2,
+        y = height / 2,
+        half = ( width - this.options.shadowBlur - Math.abs(this.options.shadowOffsetX)) / 2;
 
-    ctx.clearRect(0, 0, size, size);
+
+      ctx.clearRect(0, 0, width, height);
 
     // Initial circle
     if (options.initial) {
