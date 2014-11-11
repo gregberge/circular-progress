@@ -52,6 +52,23 @@ progress.options.text = {
 
 Update percent and draw the canvas, `value` must be a float between 0 and 100.
 
+### shadowBlur
+
+If you would like to add a drop shadow to the progress bar to create a "glow" effect you can.  This will expand the size of the canvas from the diameter of the progress par to include the size of the drop shadow.  In the below example, the canvas ends up 96px wide and tall.
+
+![circleprogress_with_shadow](https://cloud.githubusercontent.com/assets/895892/4994836/d4cfc4dc-6979-11e4-9ecc-d9cdd01e8526.png)
+
+```
+var progress = new CircularProgress({
+      radius: 42,
+      strokeStyle: '#FFFFFF',
+      shadowColor: '#00d1ff',
+      shadowBlur: 12,
+      lineCap: 'round',
+      lineWidth: 4
+    });
+```
+
 ## License
 
 MIT
