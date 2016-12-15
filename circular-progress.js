@@ -1,4 +1,4 @@
-/*! circular-progress - v0.2.1 - https://github.com/neoziro/circular-progress */
+/*! circular-progress - v0.2.3 - https://github.com/neoziro/circular-progress - © 2016 Greg Bergé MIT License */
 
 (function () {
 
